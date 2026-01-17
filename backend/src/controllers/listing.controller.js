@@ -4,6 +4,9 @@ import Listing from "../models/Listing.js";
 
 export const createListing = async (req, res) => {
   try {
+    console.log("hii");
+    console.log(req.body);
+
     const { title, description, location, country, price, image } = req.body;
 
     if (!title || !description || !location || !country || !price) {
@@ -11,6 +14,7 @@ export const createListing = async (req, res) => {
         message: "All fields are required",
       });
     }
+    console.log("hello")
 
     const listing = await Listing.create({
       title,

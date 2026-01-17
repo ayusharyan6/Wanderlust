@@ -16,6 +16,6 @@ router.get("/", getAllListings);
 router.get("/:id", getListingById);
 
 // CREATE LISTING (ONLY logged-in users)
-router.post("/", protect, createListing);
+router.post("/createListing", protect, createListing);
 
 export default router;

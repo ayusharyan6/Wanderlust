@@ -4,8 +4,17 @@ import authRoutes from "./routes/auth.routes.js";
 import listingRoutes from "./routes/listing.routes.js";
 import reviewRoutes from "./routes/review.routes.js";
 import bookingRoutes from "./routes/booking.routes.js";
+import cors from "cors";
 
 const app = express();
+app.use(cors({
+    origin: [
+      'http://localhost:8080',
+      'http://172.21.2.195:8080',
+      'https://jigsaw-pi.vercel.app'
+    ],
+    credentials: true
+  }));  
 
 app.use(express.json());
 
